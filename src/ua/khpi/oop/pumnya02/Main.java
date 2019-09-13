@@ -1,6 +1,5 @@
 package ua.khpi.oop.pumnya02;
 
-import java.awt.List;
 import java.util.*;
 
 public class Main {
