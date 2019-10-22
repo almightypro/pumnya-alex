@@ -1,66 +1,79 @@
-package pumnya04;
+package labs.pumnya04;
 
-public class Pumnya04 {
-
+public final class Pumnya04 {
+    private Pumnya04() {
+    }
+    /**
+     * An entry point - main method.
+     * @param args - arguments of main method
+     */
     public static void main(final String[] args) {
         ArgsHandler handler = new ArgsHandler(args);
         if (!handler.empty()) {
             handler.execute();
         }
-        String text = null, word = null, sentence = null, result = null;
+        String text = null;
+        String word = null;
+        String sentence = null;
+        String result = null;
+        StrBuilderD builder = new StrBuilderD();
+        final int exit = 0;
+        final int setValues = 1;
+        final int getValues = 2;
+        final int execute = 3;
+        final int printResult = 4;
         do {
             UI.mainMenu();
-            UI.getChoice();
-            switch (UI.choice) {
-                case 0:
-                    if(ArgsHandler.debug) {
+            UI.enterChoice();
+            switch (UI.getChoice()) {
+                case exit:
+                    if (ArgsHandler.isDebug()) {
                         System.out.println("\nYou chosen 0. Exiting...");
                     }
                     break;
-                case 1:
-                    if(ArgsHandler.debug) {
+                case setValues:
+                    if (ArgsHandler.isDebug()) {
                         System.out.println("\nYou chosen 1. Setting values...");
                     }
                     text = UI.getText();
                     word = UI.getWord();
                     sentence = UI.getSentence();
+                    builder.setValues(text, word, sentence);
                     break;
-                case 2:
-                    if(ArgsHandler.debug) {
+                case getValues:
+                    if (ArgsHandler.isDebug()) {
                         System.out.println("\nYou chosen 2. Getting values...");
                     }
                     if (text != null && word != null && sentence != null) {
                         UI.printInfo(text, word, sentence);
-                    }
-                    else {
+                    } else {
                         System.out.format("%nFirst you need to add values.");
                     }
                     break;
-                case 3:
-                    if(ArgsHandler.debug) {
+                case execute:
+                    if (ArgsHandler.isDebug()) {
                         System.out.println("\nYou chosen 3. Executing task...");
                     }
                     if (text != null && word != null && sentence != null) {
-                        result = StrBuilder.execute(text, word, sentence);
-                    }
-                    else {
+                        result = builder.execute();
+                    } else {
                         System.out.format("%nFirst you need to add values.");
                     }
                     break;
-                case 4:
-                    if(ArgsHandler.debug) {
-                        System.out.println("\nYou chosen 4. Printing out result...");
+                case printResult:
+                    if (ArgsHandler.isDebug()) {
+                        System.out.format("%nYou chosen 4. "
+                                        + "Printing out result...%n");
                     }
                     if (text != null && word != null && sentence != null) {
                         UI.printResult(text, result);
-                    }
-                    else {
+                    } else {
                         System.out.format("%nFirst you need to add values.");
                     }
                     break;
                 default:
                     System.out.println("\nEnter correct number.");
             }
-        } while (UI.choice != 0);
+        } while (UI.getChoice() != 0);
     }
 }

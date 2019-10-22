@@ -1,1 +1,1 @@
-package pumnya04;
+package labs.pumnya04;
