@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchor_pane" prefHeight="500" prefWidth="800" stylesheets="@../Content/sceneStyle.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="labs.pumnya16.View.GreetingPageController">
+   <children>
+      <Label ellipsisString="" layoutX="66.0" layoutY="70.0" text="Welcome to the Event Scheduler">
+         <font>
+            <Font name="Times New Roman Bold" size="48.0" />
+         </font>
+      </Label>
+      <Button fx:id="startButton" layoutX="342.0" layoutY="397.0" mnemonicParsing="false" onAction="#handleStart" text="START">
+         <font>
+            <Font name="Comic Sans MS" size="24.0" />
+         </font>
+      </Button>
+      <Label layoutX="103.0" layoutY="136.0" prefHeight="94.0" prefWidth="593.0" text="Here you can manipulate your events by the following actions:" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Times New Roman Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="103.0" layoutY="249.0" text="○ Create new events">
+         <font>
+            <Font name="Times New Roman Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="103.0" layoutY="297.0" text="○ Delete events">
+         <font>
+            <Font name="Times New Roman Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="470.0" layoutY="297.0" text="○ View events data">
+         <font>
+            <Font name="Times New Roman Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="470.0" layoutY="249.0" text="○ Sort events">
+         <font>
+            <Font name="Times New Roman Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="329.0" layoutY="340.0" text="And more...">
+         <font>
+            <Font name="Times New Roman Bold" size="28.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

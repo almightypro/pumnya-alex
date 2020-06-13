@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="labs.pumnya16.View.MainPageController">
+   <children>
+      <AnchorPane fx:id="anchor_pane" layoutY="26.0" prefHeight="474.0" prefWidth="800.0" stylesheets="@../Content/sceneStyle.css">
+         <children>
+            <TableView fx:id="tableView" editable="true" layoutX="10.0" layoutY="59.0" prefHeight="356.0" prefWidth="698.0">
+              <columns>
+                <TableColumn fx:id="dateCol" onEditCommit="#handleDateChange" prefWidth="84.0" style="-fx-alignment: center;" text="Date" />
+                <TableColumn fx:id="timeCol" onEditCommit="#handleTimeChange" prefWidth="78.0" style="-fx-alignment: center;" text="Time" />
+                <TableColumn fx:id="durationCol" onEditCommit="#handleDurationChange" prefWidth="56.0" style="-fx-alignment: center;" text="Duration" />
+                <TableColumn fx:id="venueCol" onEditCommit="#handleVenueChange" prefWidth="144.59999084472656" style="-fx-alignment: center;" text="Venue" />
+                <TableColumn fx:id="descrCol" onEditCommit="#handleDescrChange" prefWidth="222.4000244140625" style="-fx-alignment: center;" text="Description" />
+                <TableColumn fx:id="organizerCol" onEditCommit="#handleOrganizerChange" prefWidth="111.19998779296873" style="-fx-alignment: center;" text="Organizer" />
+              </columns>
+            </TableView>
+             <Label layoutX="86.0" layoutY="14.0" text="Events Book">
+                 <font>
+                     <Font name="Times New Roman Bold" size="36.0" />
+                 </font>
+             </Label>
+            <TextField fx:id="dateField" layoutX="12.0" layoutY="427.0" prefHeight="26.0" prefWidth="73.0" promptText="Date" />
+            <TextField fx:id="timeField" layoutX="90.0" layoutY="427.0" prefHeight="26.0" prefWidth="73.0" promptText="Time" />
+            <TextField fx:id="durationField" layoutX="168.0" layoutY="427.0" prefHeight="26.0" prefWidth="62.0" promptText="Duration" />
+            <TextField fx:id="venueField" layoutX="235.0" layoutY="427.0" prefHeight="26.0" prefWidth="131.0" promptText="Venue" />
+            <TextField fx:id="descrField" layoutX="371.0" layoutY="427.0" prefHeight="26.0" prefWidth="170.0" promptText="Description" />
+            <TextField fx:id="organizerField" layoutX="546.0" layoutY="427.0" prefHeight="26.0" prefWidth="96.0" promptText="Organizer" />
+             <TextField fx:id="searchField" layoutX="555.0" layoutY="21.0" onKeyReleased="#handleTextInput" promptText="Search field" />
+             <Label layoutX="456.0" layoutY="16.0" text="Search:">
+                 <font>
+                     <Font name="Comic Sans MS Bold" size="24.0" />
+                 </font>
+             </Label>
+             <ImageView fitHeight="53.0" fitWidth="58.0" layoutX="22.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                 <image>
+                     <Image url="@../Content/book.png" />
+                 </image>
+             </ImageView>
+             <Button layoutX="646.0" layoutY="427.0" mnemonicParsing="false" onAction="#handleAdd" prefHeight="26.0" prefWidth="58.0" text="Add">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="12.0" />
+               </font></Button>
+            <Button layoutX="722.0" layoutY="83.0" mnemonicParsing="false" onAction="#handleClear" prefHeight="40.0" prefWidth="62.0" text="Clear">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="719.0" layoutY="158.0" mnemonicParsing="false" onAction="#handleDelete" prefHeight="40.0" prefWidth="68.0" text="Delete">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="719.0" layoutY="355.0" mnemonicParsing="false" onAction="#handleExitButton" prefHeight="40.0" prefWidth="68.0" text="Exit">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="720.0" layoutY="217.0" mnemonicParsing="false" onAction="#handleSaveButton" prefHeight="40.0" prefWidth="68.0" text="Save">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="720.0" layoutY="275.0" mnemonicParsing="false" onAction="#handleLoadButton" prefHeight="40.0" prefWidth="68.0" text="Load">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="18.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="53.0" fitWidth="96.0" layoutX="726.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Content/search.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="26.0" fitWidth="31.0" layoutX="754.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Content/copyright-symbol.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <MenuBar prefHeight="26.0" prefWidth="800.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleOpen" text="Open">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#handleSave" text="Save">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
+               </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

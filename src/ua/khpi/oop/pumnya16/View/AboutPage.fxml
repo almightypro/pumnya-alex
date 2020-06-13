@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchor_pane" onKeyReleased="#handleExit" prefHeight="323.0" prefWidth="640.0" stylesheets="@../Content/sceneStyle.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="labs.pumnya16.View.AboutPageController">
+   <children>
+      <ImageView fitHeight="301.0" fitWidth="339.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Content/about_photo.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="56.0" fitWidth="62.0" layoutX="344.0" layoutY="262.0" onMouseClicked="#handleDiscord" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Content/discord.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ImageView>
+      <ImageView fitHeight="56.0" fitWidth="69.0" layoutX="414.0" layoutY="262.0" onMouseClicked="#handleTelegram" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Content/telegram.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="56.0" fitWidth="63.0" layoutX="491.0" layoutY="262.0" onMouseClicked="#handleSkype" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Content/skype.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="56.0" fitWidth="74.0" layoutX="562.0" layoutY="262.0" onMouseClicked="#handleYoutube" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Content/youtube.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+            <Label layoutX="325.0" layoutY="14.0" prefHeight="63.0" prefWidth="301.0" text="This program was created using Java 13 &amp; JavaFX 14" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Times New Roman Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="344.0" layoutY="144.0" text="Platform: Windows">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="344.0" layoutY="175.5" text="Version: 1.0">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="344.0" layoutY="207.0" text="Author: Pumnya Alex">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="422.0" layoutY="234.0" text="Contact me">
+         <font>
+            <Font name="Times New Roman Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="427.0" layoutY="87.0" mnemonicParsing="false" onAction="#handleClose" prefHeight="38.0" prefWidth="85.0" text="Close">
+         <font>
+            <Font name="Comic Sans MS Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
